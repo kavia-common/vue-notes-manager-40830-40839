@@ -1,45 +1,45 @@
-# vue-kavia
+# Ocean Notes (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple, fast notes application with an Ocean Professional theme. Create, search, edit, and delete notes with automatic local persistence (LocalStorage). Built with Vue 3, Pinia, and Vue Router.
 
-## Recommended IDE Setup
+## Features
+- Themed UI with Top Bar, Sidebar, and main content area
+- Create, select, edit, and delete notes
+- Real-time search across titles and content
+- Local persistence via LocalStorage (safe fallback if unavailable)
+- Accessible labels and focus styles
+- Environment variables via `import.meta.env`
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+## Quick start
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+Vite dev server runs on port 3000 (already configured). To preview a production build:
+```bash
 npm run build
+npm run preview
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Environment variables
+Copy `.env.example` to `.env` and adjust if needed. Notable keys:
+- `VITE_LOG_LEVEL`: controls console log verbosity (silent, error, warn, info, debug)
+- `VITE_FEATURE_FLAGS`: displayed in the sidebar (e.g., `search,local-persistence`)
+- `VITE_NODE_ENV`: environment indicator shown in the top bar
 
-```sh
-npm run test:unit
-```
+## Project scripts
+- `npm run dev` - start dev server (port 3000)
+- `npm run build` - type-check, compile, and minify
+- `npm run preview` - preview production build
+- `npm run test:unit` - run unit tests (if present)
+- `npm run lint` - lint codebase
 
-### Lint with [ESLint](https://eslint.org/)
+## Notes on data
+All notes are stored in your browser’s LocalStorage under the key `notes_app_v1`. Clearing browser storage will remove notes.
 
-```sh
-npm run lint
-```
+## Tech
+- Vue 3 + Vite
+- Pinia (state)
+- Vue Router
+- TypeScript
